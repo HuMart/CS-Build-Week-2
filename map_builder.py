@@ -18,7 +18,7 @@ class Map:
         roomID = new_room["room_id"]
 
         if str(roomID) in self.data:
-            print("Existing room:", roomID)
+            print("Existing room")
         else:
             new_room = {
                 "title": new_room["title"],
@@ -37,5 +37,3 @@ class Map:
 
             self.map_file()
 
-    def find_exits(self, start_id, last_id):
-        pass
