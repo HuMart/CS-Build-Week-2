@@ -1,5 +1,6 @@
 import json
 
+
 class Map:
 
     def __init__(self):
@@ -15,7 +16,7 @@ class Map:
 
         roomID = new_room["room_id"]
 
-        if str(roomiID) in self.data:
+        if str(roomID) in self.data:
             print("Existing room")
         else:
             new_room = {
@@ -30,7 +31,7 @@ class Map:
 
             self.data[roomID] = new_room
             
-            with open("map.txt", w) as new_file:
+            with open("map.txt", 'w') as new_file:
                 json.dump(self.data, new_file)
 
             self.map_file()
