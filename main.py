@@ -7,4 +7,5 @@ api_key = input("insert your key")
 direction = input("enter the direction:")
 
 world = Maze(api_key, command=direction)
+world.add_to_map(direction)
 world.move_to_room(direction)

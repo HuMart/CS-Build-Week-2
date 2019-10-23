@@ -11,17 +11,18 @@ class Map:
     def map_file(self):
         with open("map.txt") as js_file:
             self.data = json.load(js_file)
+            print(self.data)
 
     def add_to_map(self, new_room):
 
         roomID = new_room["room_id"]
 
         if str(roomID) in self.data:
-            print("Existing room")
+            print("Existing room:", roomID)
         else:
             new_room = {
                 "title": new_room["title"],
-                "room,_id": new_room["room_id"],
+                "room_id": new_room["room_id"],
                 "elevation": new_room["elevation"],
                 "coordinates": new_room["coordinates"],
                 "terrain": new_room["terrain"],
