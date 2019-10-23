@@ -1,0 +1,1 @@
+{"0": {"title": "title", "room_id": 0, "elevation": 0, "coordinates": "(60,60)", "terrain": "NORMAL", "exits": ["n", "s", "e", "w"], "messages": []}}
