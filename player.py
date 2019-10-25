@@ -2,6 +2,7 @@ import json
 import time
 import random
 import requests
+from cpu import CPU
 
 URL = "https://lambda-treasure-hunt.herokuapp.com/api/adv"
 HEADERS = {"Authorization": "Token 5eb6cf7b74fecb698b5a9d227cce7f23d013bedd"}
@@ -224,40 +225,40 @@ def look_for_coordenates(coord):
                     new_path.append(map[vertex["exits"][i]])
                     queue.insert(0, new_path)
 
-# def wishingWell():
-#         directions = []
-#         path = map.look_for_coordenates( "(63,61)")
-#         path.pop(0)
-#         print(path)
-#         for room_id in path:
-#             directions.append = map.look_for_coordenates("(63,61)", room_Id)
-#             time.sleep(self.player_cooldown)
-#             currentRoom = self.travel(direction)
-#             self.player_cooldown = currentRoom['cooldown']
-#             self.player_location = currentRoom['room_id']
-#         json = {"name":"wishing well"}
-#         time.sleep(self.player_cooldown)
-#         response = requests.post(self.url + 'examine', headers=self.headers, json=json)
-#         data = response.json() 
 
-#         #write the wishing well message to wishingwell.txt
-#         with open('wishingwell.txt', 'w') as outfile:
-#              outfile.write(data['description'][39:])
-#              outfile.close()
-#         self.cpu.load('wishingwell.txt')
-        
-
-#         self.player_cooldown = data['cooldown']
-#         time.sleep(self.player_cooldown)
-#         self.player_mine = ''.join(self.cpu.run()[23:])
-#         return ''.join(self.cpu.run()[23:])
+    
 
 
 
 # look_for_gold()
 # look_for_shop(1000)
 # change_name()
-look_for_coordenates("(63,61)")
-# end = requests.get(url = "https://lambda-treasure-hunt.herokuapp.com/api/bc/get_balance/", headers = HEADERS)
-# end_res = json.loads(end.text)
-# print(end_res)
+ 
+end = requests.get(url = "https://lambda-treasure-hunt.herokuapp.com/api/bc/get_balance/", headers = HEADERS)
+end_res = json.loads(end.text)
+print(end_res)
+# look_for_coordenates("(63,61)")
+# pray = requests.post(url = f"{URL}/pray/", headers = HEADERS)
+# pray_res = json.loads(pray.text)
+# time.sleep(pray_res["cooldown"])
+
+
+# look_for_coordenates( "(52,52)") 
+# well = requests.post(url = f"{URL}/examine/", headers = HEADERS, json = {"name": "well"})
+# well_res = well.json()
+# with open("well.txt", "w") as outfile:
+#     outfile.write(well_res['description'][39:])
+# outfile.close()
+# cpu = CPU()
+# cpu.load('well.txt')
+# time.sleep(well_res['cooldown'])
+# run_mine = ''.join(cpu.run()[23:])
+# print(run_mine)
+
+        
+
+    
+       
+
+
+# find_by_coord("(51,60)")  
